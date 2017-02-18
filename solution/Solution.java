@@ -14,8 +14,9 @@
  *     ListNode next;
  *
  *     ListNode(int x) {
-         val = x; }
+ *       val = x; 
  *     }
+ * }
  */
 public class Solution {
 
