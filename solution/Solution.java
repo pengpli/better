@@ -7,7 +7,7 @@
 *Output:  3->2->1->6->5->4->7->8->NULL
 */
 
-/**
+/*
  * Definition for singly-linked list.
  * public class ListNode {
  *     int val;
