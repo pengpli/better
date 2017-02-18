@@ -40,7 +40,7 @@ public class Solution {
 	}
 
 	private static ListNode reverse(ListNode pre, ListNode next) {
-		ListNode last = pre.next;// where first will be doomed "last"
+		ListNode last = pre.next;
 		ListNode cur = last.next;
 		while (cur != next) {
 			last.next = cur.next;
