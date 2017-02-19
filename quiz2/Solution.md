@@ -1,4 +1,4 @@
-iniTest 2
+Test 2
  
 Design test cases for a storage array. The array has the following functionalities:
 1.        Create one or multiple LUN’s.
