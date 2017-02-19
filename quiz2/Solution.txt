@@ -11,7 +11,7 @@ Design test cases for a storage array. The array has the following functionaliti
 8. Performance is not impacted no matter how many LUN’s are created and exported.
 
 1.1 Create a LUN with default parameter, verify it succeed.
-1.2 Create a LUN with custom parameter, capacity, group or access 
+1.2 Create a LUN with custom parameter(thick or thin), capacity, owner, group or access.
 1.3 Create a LUN with capacity out of the boundary(large than the or), verify it fail.
 1.4 Create multipe LUN with batch operation, verify it succeed.
 1.5 Create multiple LUN (the number exceed the limit, the overall capacity exceed the limit), 
