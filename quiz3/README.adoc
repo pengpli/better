@@ -26,34 +26,34 @@ Create a lun
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X POST https://dns/v1/LUN/ -d {"id":"{id}","size":"{size}"}
+       -X POST https://dns/v1/LUN/ -d {"id":"$id","size":"$size"}
 ----
 
 Resize a lun
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X POST https://dns/v1/LUN/{id} -d {"size","{new_size}"}      
+       -X POST https://dns/v1/LUN/{id} -d {"size","$new_size"}      
 ----
 
 Remove a LUN.
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X DELETE https://dns/v1/LUN/{id}      
+       -X DELETE https://dns/v1/LUN/$id      
 ----
 Retrieve the information (size) of a LUN.
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X GET https://dns/v1/LUN/{id}      
+       -X GET https://dns/v1/LUN/$id      
 ----
 
 Concurrent requests?(several operation could be execute on same id?)
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X POST https://dns/v1/LUN/{id}      
+       -X POST https://dns/v1/LUN/$id      
 ----
 Data persistence.(Is this a client operation? Or Should the server persist its state in an interval?)
 ----
