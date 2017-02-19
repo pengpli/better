@@ -50,12 +50,17 @@ $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 ----
 
 Concurrent requests?(several operation could be execute on same id?)
+
 ----
+concurrency read should succeed
+concurrency read on write, the read operation should wait for write operation
+concurrency writes should fast fail.
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
        -X POST https://dns/v1/LUN/$id      
 ----
 Data persistence.(Is this a client operation? Or Should the server persist its state in an interval?)
 ----
+Persist the state to a file on disk or in a database, when application start/stop and when there is write/delete operation
 Not finished yet.
 ----
