@@ -1,11 +1,11 @@
-#About
+# About
 Storage array simulator is a web service to manipulate LUNs.
 
-##REST/HTTP interface
+##  REST/HTTP interface
 Most users will work with the web application. It exposes a REST/HTTP interface based on the core library.
 The data format is JSON.
 
-##General operations
+##  General operations
 Create one or multiple LUN’s.
 Resize a LUN.
 Remove a LUN.
