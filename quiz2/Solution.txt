@@ -41,7 +41,8 @@ Design test cases for a storage array. The array has the following functionaliti
 7.2  Mock concurrent write request
 7.3  Mock concurrent wirte and read request, until it fail or the response time fall below the givin limit.
 
-8.  Start from a base line, measure the performance metrics(); then double the LUN, measure it again; repeat this until the metrics under its threshold, or the whole function lose.
+8.1  Start from a base line, measure the performance metrics(); then double the LUN, measure it again; 
+     repeat this until the metrics under its threshold, or the whole function lose.
 
 [Referance]
 Independent of how you connect, SAN is all about the consolidation of multiple workloads into a shared pool of capacity. 
