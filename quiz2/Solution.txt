@@ -46,6 +46,12 @@ Design test cases for a storage array. The array has the following functionaliti
 [Referance]
 Independent of how you connect, SAN is all about the consolidation of multiple workloads into a shared pool of capacity. 
 
-The way that capacity is used depends on the host that a given volume/LUN is presented to. The disk array itself simply presents the capacity; any file system or OS requirement is driven by the host on the other side. The disk array itself is able to provide advanced data services such as multi-site replication and sub-LUN data tiering across different physical disk types. 
+The way that capacity is used depends on the host that a given volume/LUN is presented to. The disk array itself simply 
+presents the capacity; any file system or OS requirement is driven by the host on the other side. The disk array itself is 
+able to provide advanced data services such as multi-site replication and sub-LUN data tiering across different physical 
+disk types. 
 
-Applying these data services once at the array level can be much more efficient than managing them separately at the host level. This is particularly true in enterprise environments where you may have dozens if not hundreds of physical servers connected to the same disk array.
+
+Applying these data services once at the array level can be much more efficient than managing them separately at the host
+level. This is particularly true in enterprise environments where you may have dozens if not hundreds of physical servers 
+connected to the same disk array.
