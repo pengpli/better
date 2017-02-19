@@ -1,10 +1,11 @@
-About
+#About
 Storage array simulator is a web service to manipulate LUNs.
 
-REST/HTTP interface
+##REST/HTTP interface
 Most users will work with the web application. It exposes a REST/HTTP interface based on the core library.
 The data format is JSON.
 
+##General operations
 Create one or multiple LUN’s.
 Resize a LUN.
 Remove a LUN.
@@ -25,14 +26,14 @@ Create a lun
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X POST https://dns/v1/LUN/ -d 
+       -X POST https://dns/v1/LUN/ -d {"id":"{id}","size":"{size}"}
 ----
 
 Resize a lun
 ----
 $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
-       -X POST https://dns/v1/LUN/{id} -d {"id":"{id}","size","{new_size}"}      
+       -X POST https://dns/v1/LUN/{id} -d {"size","{new_size}"}      
 ----
 
 Remove a LUN.
@@ -48,5 +49,13 @@ $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -X GET https://dns/v1/LUN/{id}      
 ----
 
-Concurrent requests.
-Data persistence.
+Concurrent requests?(several operation could be execute on same id?)
+----
+$ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+       -H "User-Tenant: test"
+       -X POST https://dns/v1/LUN/{id}      
+----
+Data persistence.(Is this a client operation? Or Should the server persist its state in an interval?)
+----
+Not finished yet.
+----
