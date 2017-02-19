@@ -14,11 +14,14 @@ Design test cases for a storage array. The array has the following functionaliti
 1.2 Create a LUN with custom parameter, capacity, group or access 
 1.3 Create a LUN with capacity out of the boundary(large than the or), verify it fail.
 1.4 Create multipe LUN with batch operation, verify it succeed.
-1.5 Create multiple LUN (the number exceed the limit, the overall capacity exceed the limit), verify it fail.
-1.6 Create multiple LUN with part of input not legal, if will some check options, the other one should succeed, if without check option, the whole operation should abort.
+1.5 Create multiple LUN (the number exceed the limit, the overall capacity exceed the limit), 
+    verify it fail.
+1.6 Create multiple LUN with part of input not legal, if will some check options, the other one 
+    should succeed, if without check option, the whole operation should abort.
 
 2.1 Resize to a reasonalbe should succeed  
-2.2 Resize to under the limit, to larger than the whole capacity, or larger than the left of the whole capacity should fail
+2.2 Resize to under the limit, to larger than the whole capacity, or larger than the left 
+    of the whole capacity should fail
 
 3.1  Export a LUN to a host should succeed
 3.2  Export a LUN to multiple host should succeed/fail base on the operation.
@@ -30,7 +33,8 @@ Design test cases for a storage array. The array has the following functionaliti
 5.1 Remove an unexported LUN should show error info and abort. 
 5.2 Unexport a LUN in use should succeed if use force mode.
 
-6.1. Retreive the info of a existing LUN should succeed, and the result should be complete, and return values may be different depend on paramter(basic or full)
+6.1. Retreive the info of a existing LUN should succeed, and the result should be complete, 
+     and return values may be different depend on paramter(basic or full)
 6.2 Retrieve the info of a non-existing LUN should return proper error info.
 
 7.1  Mock concurrent read request
