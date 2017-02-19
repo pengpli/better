@@ -27,3 +27,26 @@ $ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
        -H "User-Tenant: test"
        -X POST https://dns/v1/LUN/ -d 
 ----
+
+Resize a lun
+----
+$ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+       -H "User-Tenant: test"
+       -X POST https://dns/v1/LUN/{id} -d {"id":"{id}","size","{new_size}"}      
+----
+
+Remove a LUN.
+----
+$ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+       -H "User-Tenant: test"
+       -X DELETE https://dns/v1/LUN/{id}      
+----
+Retrieve the information (size) of a LUN.
+----
+$ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+       -H "User-Tenant: test"
+       -X GET https://dns/v1/LUN/{id}      
+----
+
+Concurrent requests.
+Data persistence.
