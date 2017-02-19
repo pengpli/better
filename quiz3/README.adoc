@@ -1,0 +1,29 @@
+About
+Storage array simulator is a web service to manipulate LUNs.
+
+REST/HTTP interface
+Most users will work with the web application. It exposes a REST/HTTP interface based on the core library.
+The data format is JSON.
+
+Create one or multiple LUN’s.
+Resize a LUN.
+Remove a LUN.
+Retrieve the information (size) of a LUN.
+Concurrent requests.
+Data persistence.
+
+The bearer token is sent to the Hawkular Metrics server via the Authorization header.
+
+Access all lun in a tenant
+----
+$ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+       -H "User-Tenant: test"
+       -X GET https://dns/v1/LUN/   | python -m json.tool
+----
+
+Create a lun
+----
+$ curl -H "Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+       -H "User-Tenant: test"
+       -X POST https://dns/v1/LUN/ -d 
+----
