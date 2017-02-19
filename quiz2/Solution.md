@@ -1,1 +1,47 @@
-init
+iniTest 2
+ 
+Design test cases for a storage array. The array has the following functionalities:
+1.        Create one or multiple LUN’s.
+2.        Resize (expand) a LUN.
+3.        Export a LUN to a host.
+4.        Un-export a LUN.
+5.        Remove an un-exported LUN.
+6.        Retrieve the information (size, export) of a LUN.
+7.        Concurrent requests is supported.
+8.        Performance is not impacted no matter how many LUN’s are created and exported.
+
+1.1 Create a LUN with default parameter, verify it succeed.
+1.2 Create a LUN with custom parameter, capacity, group or access 
+1.3 Create a LUN with capacity out of the boundary(large than the or), verify it fail.
+1.4 Create multipe LUN with batch operation, verify it succeed.
+1.5 Create multiple LUN (the number exceed the limit, the overall capacity exceed the limit), verify it fail.
+1.6 Create multiple LUN with part of input not legal, if will some check options, the other one should succeed, if without check option, the whole operation should abort.
+
+2.1 Resize to a reasonalbe should succeed  
+2.2 Resize to under the limit, to larger than the whole capacity, or larger than the left of the whole capacity should fail
+
+3.1  Export a LUN to a host should succeed
+3.2  Export a LUN to multiple host should succeed/fail base on the operation.
+
+4.1 Unexport a LUN not in use should succeed, the capacity is recycled.
+4.1 Unexport a LUN in use should show some warn and abort
+4.2 Unexport a LUN in use should succeed if use force mode.
+
+5.1 Remove an unexported LUN should show error info and abort. 
+5.2 Unexport a LUN in use should succeed if use force mode.
+
+6.1. Retreive the info of a existing LUN should succeed, and the result should be complete, and return values may be different depend on paramter(basic or full)
+6.2 Retrieve the info of a non-existing LUN should return proper error info.
+
+7.1  Mock concurrent read request
+7.2  Mock concurrent write request
+7.3  Mock concurrent wirte and read request, until it fail or the response time fall below the givin limit.
+
+8.  Start from a base line, measure the performance metrics(); then double the LUN, measure it again; repeat this until the metrics under its threshold, or the whole function lose.
+
+[Referance]
+Independent of how you connect, SAN is all about the consolidation of multiple workloads into a shared pool of capacity. 
+
+The way that capacity is used depends on the host that a given volume/LUN is presented to. The disk array itself simply presents the capacity; any file system or OS requirement is driven by the host on the other side. The disk array itself is able to provide advanced data services such as multi-site replication and sub-LUN data tiering across different physical disk types. 
+
+Applying these data services once at the array level can be much more efficient than managing them separately at the host level. This is particularly true in enterprise environments where you may have dozens if not hundreds of physical servers connected to the same disk array.
