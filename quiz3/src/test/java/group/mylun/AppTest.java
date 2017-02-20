@@ -82,7 +82,14 @@ public class AppTest {
 		  	put("/lun");	  
       }
 
-	  
+//records.json
+//  {
+//   "luns" :
+//      [
+//        { "id" : "ID1",  "size" :  "SIZE1" },
+//        { "id" : "ID2",  "size" :  "SIZE2" }
+//      ]
+//   }	  
 	  @Test
 	  public void addMultipleLuns() {
 		  final byte[] bytes = IOUtils.toByteArray(getClass().getResourceAsStream("/path/records.json"));
@@ -91,8 +98,10 @@ public class AppTest {
 		  expect().
 		  	statusCode(200).
 		  when().
-		  	put("/lun");	  
+		  	put("/lun/batch");	  
       }
+
+
 
 	  @Test
 	  //fail if part of id illegal or the overall size overhead
@@ -103,7 +112,7 @@ public class AppTest {
 		  expect().
 		  	statusCode(400).
 		  when().
-		  	put("/lun");	  
+		  	put("/lun/batch");	  
       }
 
 	  @Test
