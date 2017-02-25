@@ -1,6 +1,8 @@
 Test 2
 
-#add on 2/25, the batch resize should also concern conflict, that is to say, each of the resize operation may don't exceed the overall quota, but the operations together may exceed the quota, thus this should also be tested, and the server should use a data structure contain lock to avoid such issue.
+#add on 2/25, the batch resize should also concern conflict, that is to say, each of the resize operation may don't exceed
+the overall quota, but the operations together may exceed the quota, thus this should also be tested, and the server should
+use a data structure contain lock to avoid such issue.
  
 Design test cases for a storage array. The array has the following functionalities:
 1. Create one or multiple LUN’s.
